@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\begin{document}
+\begin{tikzpicture}
+\clip (-2.5,-2.5) rectangle (2.5,2.5);
+
+\draw[color=gray,step=1.0,dotted] (-3.3,-3.3) grid (3.3,3.3);
+\draw[->] (-2.3,0)--(2.3,0) node[above left]{$\Real z$};
+\draw[->] (0,-2.3)--(0,2.3) node[below right]{$\Imag z$};
+
+\foreach \x in {-1,...,1}
+\foreach \y in {-1,...,1}
+  \fill[color=blue] (2*\x,2.2*\y) circle (0.05);
+
+\foreach \x in {-2,...,1}
+\foreach \y in {-2,...,1}
+  \fill[color=blue] (2*\x+1,2.2*\y+1.1) circle (0.05);
+
+\draw[color=black] (1,0.1)--(1,-0.1) node[below right]{$\frac{\pi}{4}$};
+\draw[color=black] (-0.1,1.1)--(0.1,1.1) node[right]{$\frac{\pi}{4|\delta|}$};
+\end{tikzpicture}
+\end{document}
